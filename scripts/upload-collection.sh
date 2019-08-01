@@ -1,4 +1,4 @@
-#!/bin/ash
+#!/bin/sh
 if [ -z "$ZK_HOST" ]; then
     echo "UPLOAD-COLLECTION: var ZK_HOST empty, ignoring upload-collection"
 else
