@@ -1,0 +1,33 @@
+version: '3'
+
+services:
+
+  solr-1:
+    container_name: solr-1
+    build:
+      context: .
+    image: vertigoala/solr-cloud
+    environment:
+      ZK_HOST: zoo
+      SOLR_HOST: solr-1
+      SOLR_NUM_SHARDS: 1
+#      SOLR_HEAP: 64g
+    volumes:
+      - data_solr-1:/data/solr
+    depends_on:
+      - zoo
+    ports:
+      - "8983:8983"
+  zoo:
+    container_name: zoo
+    image: zookeeper
+    environment:
+      ZOO_LOG4J_PROP: "DEBUG,CONSOLE"
+    volumes:
+      - data_zoo:/conf
+    ports:
+      - "2181:2181"
+
+volumes:
+  data_solr-1:
+  data_zoo:
