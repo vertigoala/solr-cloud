@@ -469,6 +469,7 @@
     -->
     <!-- start of BIE Biocache Fields -->
     <field name="_version_" type="tlong" indexed="true" stored="true"/>
+    <field name="_id" type="string" indexed="true" stored="true" multiValued="false"/>
     <field name="id" type="string" indexed="true" stored="true" multiValued="false"/>
     <field name="row_key" type="string" indexed="true" stored="true" multiValued="false"/>
     <field name="occurrence_id" type="string" stored="true" multiValued="false"  />
@@ -531,21 +532,14 @@
     <field name="rgt" type="tint" indexed="true" stored="true" multiValued="false" omitNorms="true" />
 
     <field name="kingdom" type="string" indexed="true" stored="true" multiValued="false" />
-
     <field name="phylum" type="string" indexed="true" stored="true" multiValued="false"  />
-
     <field name="class" type="string" indexed="true" stored="true" multiValued="false"/>
-
     <field name="order" type="string" indexed="true" stored="true" multiValued="false"/>
-
     <field name="family" type="string" indexed="true" stored="true" multiValued="false" />
-
     <field name="genus" type="string" indexed="true" stored="true" multiValued="false" />
     <field name="genus_guid" type="string" indexed="true" stored="true" multiValued="false" />
-
     <field name="species_guid" type="string" indexed="true" stored="true" multiValued="false"  />
     <field name="species" type="string" indexed="true" stored="true" multiValued="false"  />
-
     <field name="subspecies_guid" type="string" indexed="true" stored="true" multiValued="false" />
     <field name="subspecies_name" type="string" indexed="true" stored="true" multiValued="false" />
     <!-- Not actually being used in the search -->
@@ -734,7 +728,7 @@
     <field name="quad"     type="quad"     indexed="true" stored="true"  multiValued="false" />
     <field name="geohash"  type="geohash"  indexed="true" stored="true"  multiValued="false" />
 
-    <!-- Some ALA dynamic fields -->
+    <!-- Fields definitions -->
     <field name="abcd_identification_qualifier" type="string" indexed="true" stored="true" omitNorms="true" />
     <field name="abcd_identification_qualifier_insertion_point" type="string" indexed="true" stored="true" omitNorms="true" />
     <field name="abcd_type_status" type="string" indexed="true" stored="true" omitNorms="true" />
@@ -861,6 +855,7 @@
     <field name="raw_ibra" type="string" indexed="true" stored="true" omitNorms="true" />
     <field name="raw_images" type="string" indexed="true" stored="true" omitNorms="true" />
     <field name="raw_northing" type="string" indexed="true" stored="true" omitNorms="true" />
+    <field name="raw_sampling_protocol" type="string" indexed="true" stored="true" omitNorms="true" />
     <field name="raw_sounds" type="string" indexed="true" stored="true" omitNorms="true" />
     <field name="raw_subspecies" type="string" indexed="true" stored="true" omitNorms="true" />
     <field name="related_resource_id" type="string" indexed="true" stored="true" omitNorms="true" />
@@ -912,6 +907,8 @@
     <!-- catchall text field that indexes tokens both normally and in reverse for efficient
          leading wildcard queries. -->
     <field name="text_rev" type="text_rev" indexed="true" stored="false" multiValued="true"/>
+
+    <!-- No dynamic fields, see dynamic_solr_schema_biocache to turn on -->
 
   </fields>
 

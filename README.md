@@ -17,3 +17,5 @@ docker-compose up
 ## TODO
 
 The `solr` folder contains artifacts that maybe should be downloaded at Dockerfile build time.
+
+Notes: ala-install has options for biocache schema and therefore the original file is a template.

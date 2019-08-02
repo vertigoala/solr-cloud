@@ -6,7 +6,7 @@ if [ ! -z "$ZK_HOST" ]; then
     /opt/wait-for-it.sh -h "$ZK_HOST" -p 2181 --strict -- echo "SOLR-CLOUD ENTRYPOINT: zookeeper is up"
     if [ "$SOLR_HOST" == "solr-1" ]; then
         /opt/upload-collection.sh
-        /opt/create-collection.sh
+        /opt/create-collection.sh &
     fi
 fi
 
